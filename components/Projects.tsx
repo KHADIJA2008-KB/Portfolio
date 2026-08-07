@@ -4,9 +4,28 @@ type Project = {
   description: string;
   stack: string[];
   liveUrl?: string;
+  ctaLabel?: string;
 };
 
 const projects: Project[] = [
+  {
+    tag: "ml-capstone",
+    title: "Search Intelligence Capstone",
+    description:
+      "Built a repeatable refresh/content opportunity scoring workflow on real FlyRank search data, then shipped a deployed research-paper-style experience with ranked recommendations and reason-coded actions.",
+    stack: ["Python", "ML validation", "FlyRank search data", "Netlify"],
+    liveUrl: "https://mlcapstone01.netlify.app/",
+    ctaLabel: "> view_research_paper()",
+  },
+  {
+    tag: "ai-fluency",
+    title: "General AI Fluency Capstone",
+    description:
+      "Shipped a personal portfolio and AI agent experience as a public-facing brand build, turning coursework into a deployed website that can be explored by visitors.",
+    stack: ["Next.js", "Tailwind CSS", "Vercel", "AI agent"],
+    liveUrl: "https://khadijabilal.vercel.app/",
+    ctaLabel: "> view_site()",
+  },
   {
     tag: "autonomous-agent",
     title: "Autonomous Research Scout Agent",
@@ -101,7 +120,7 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="mt-4 inline-flex items-center gap-2 rounded-md border border-accent/40 bg-accent/20 px-4 py-2 font-mono text-xs font-medium text-accent2 transition hover:bg-accent/40"
                     >
-                      <span>&gt; test_agent_demo()</span>
+                      <span>{project.ctaLabel ?? "> test_agent_demo()"}</span>
                       <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                         <path
                           d="M4 12L12 4M12 4H6M12 4V10"

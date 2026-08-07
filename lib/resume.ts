@@ -46,13 +46,23 @@ Other
 
 PROJECTS:
 
-1. Autonomous Research Scout Agent
+1. Search Intelligence Capstone
+   Built a repeatable refresh/content opportunity scoring workflow on real FlyRank
+   search data, then shipped a deployed research-paper-style experience with ranked
+   recommendations and reason-coded actions. Live deliverable: https://mlcapstone01.netlify.app/
+
+2. General AI Fluency Capstone
+   Shipped a personal portfolio and AI agent experience as a public-facing brand
+   build, turning coursework into a deployed website that visitors can explore.
+   Live deliverable: https://khadijabilal.vercel.app/
+
+3. Autonomous Research Scout Agent
    An autonomous AI agent pipeline that monitors daily ArXiv preprints, extracts
    benchmark lifts and technical takeaways using an LLM, and logs structured research
    cards into Notion. A live demo is available via a button in the Hero and Projects
    sections of the site.
 
-2. Multi-Agent Research Crew
+4. Multi-Agent Research Crew
    A collaborative multi-agent AI system built with CrewAI. Specialized agents
    (researcher, analyst, writer) coordinate to complete complex tasks end-to-end,
    producing a synthesized report from a single prompt. Demonstrates agent
