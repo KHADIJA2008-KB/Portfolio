@@ -1,4 +1,4 @@
-const LINKEDIN_URL = "REPLACE_ME";
+const LINKEDIN_URL = "https://www.linkedin.com/in/khadija-bilal-40a838332/";
 const GITHUB_URL = "https://github.com/KHADIJA2008-KB";
 const CV_URL = "/khadija-bilal-cv.pdf";
 const BOOKING_URL = "https://calendly.com/khadijabilal08";
