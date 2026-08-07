@@ -1,7 +1,7 @@
 const LINKEDIN_URL = "REPLACE_ME";
 const GITHUB_URL = "https://github.com/KHADIJA2008-KB";
 const CV_URL = "/khadija-bilal-cv.pdf";
-const BOOKING_URL = "REPLACE_ME";
+const BOOKING_URL = "https://calendly.com/khadijabilal08";
 
 const linkButtonClassName =
   "inline-flex items-center gap-2 rounded-md border border-border px-4 py-2.5 font-mono text-xs text-muted transition hover:border-accent2/60 hover:text-accent2";
