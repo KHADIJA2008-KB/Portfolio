@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Khadija Bilal — AI/ML Engineer (Preview)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bg: "#0B0E11", surface: "#12161B", surface2: "#181D24",
+          border: "#232A32", ink: "#EDEEF0", muted: "#8B95A1",
+          faint: "#5A6470", accent: "#6E56CF", accent2: "#3FD9C3",
+        },
+        fontFamily: {
+          display: ["'Space Grotesk'", "sans-serif"],
+          body: ["Inter", "sans-serif"],
+          mono: ["'JetBrains Mono'", "monospace"],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background:#0B0E11; color:#EDEEF0; }
+  ::selection { background:#6E56CF; color:#0B0E11; }
+  .console-scroll::-webkit-scrollbar{width:6px}
+  .console-scroll::-webkit-scrollbar-track{background:transparent}
+  .console-scroll::-webkit-scrollbar-thumb{background:#232A32;border-radius:999px}
+  @keyframes rise { from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:translateY(0)} }
+  .rise { animation: rise .7s cubic-bezier(.16,1,.3,1) forwards; opacity:0; }
+  a:focus-visible, button:focus-visible, textarea:focus-visible { outline:2px solid #3FD9C3; outline-offset:3px; }
+  .preview-banner { background:#181D24; border-bottom:1px solid #232A32; }
+</style>
+</head>
+<body class="font-body antialiased">
+
+<div class="preview-banner">
+  <div class="max-w-5xl mx-auto px-6 sm:px-8 py-2 font-mono text-[11px] text-faint">
+    static preview — visuals only · the real site (Next.js + live agent) is in the .zip
+  </div>
+</div>
+
+<nav class="sticky top-0 z-40 border-b border-border/70 bg-bg/80 backdrop-blur">
+  <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4 sm:px-8">
+    <a href="#" class="font-display text-sm font-semibold text-ink">Khadija Bilal</a>
+    <div class="hidden gap-7 font-mono text-xs text-muted sm:flex">
+      <a href="#about" class="hover:text-accent2 transition">about</a>
+      <a href="#skills" class="hover:text-accent2 transition">skills</a>
+      <a href="#projects" class="hover:text-accent2 transition">projects</a>
+      <a href="#contact" class="hover:text-accent2 transition">contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="relative overflow-hidden border-b border-border">
+  <div class="absolute inset-0">
+    <canvas id="nodefield" class="absolute inset-0 h-full w-full"></canvas>
+    <div class="absolute inset-0" style="background:linear-gradient(to bottom, rgba(11,14,17,.1), rgba(11,14,17,.7) 60%, #0B0E11)"></div>
+  </div>
+  <div class="relative mx-auto flex min-h-[80vh] max-w-5xl flex-col justify-center px-6 py-24 sm:px-8">
+    <div class="rise" style="animation-delay:0ms">
+      <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1.5 font-mono text-xs text-accent2 backdrop-blur">
+        <span class="relative flex h-1.5 w-1.5">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent2 opacity-60"></span>
+          <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent2"></span>
+        </span>
+        agent_status: online — ml_internship: flyrank, complete
+      </div>
+    </div>
+    <h1 class="rise font-display text-5xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-7xl" style="animation-delay:80ms">Khadija Bilal</h1>
+    <p class="rise mt-4 font-display text-xl font-medium text-muted sm:text-2xl" style="animation-delay:150ms">AI/ML Engineer</p>
+    <p class="rise mt-6 max-w-xl text-lg leading-relaxed text-muted" style="animation-delay:220ms">I build practical, production-ready ML systems and AI agents — from the model up to the API that ships it.</p>
+    <div class="rise mt-10 flex flex-wrap items-center gap-4" style="animation-delay:300ms">
+      <a href="#projects" class="rounded-md bg-accent px-5 py-3 text-sm font-medium text-white hover:bg-accent/90 transition">View projects</a>
+      <a href="https://your-agent-demo.netlify.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-md border border-accent2/60 bg-accent2/10 px-5 py-3 text-sm font-medium text-accent2 hover:bg-accent2/20 transition">
+        <span>⚡ Test Research Scout Agent</span>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#contact" class="rounded-md border border-border px-5 py-3 text-sm font-medium text-ink hover:border-accent2/60 hover:text-accent2 transition">Get in touch</a>
+      <span class="font-mono text-xs text-faint">or ask the agent, bottom right ↘</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="border-b border-border">
+  <div class="mx-auto max-w-5xl px-6 py-24 sm:px-8">
+    <p class="font-mono text-xs text-accent2">// about</p>
+    <div class="mt-6 grid gap-10 sm:grid-cols-[1.3fr_1fr]">
+      <p class="max-w-xl font-display text-2xl font-medium leading-snug text-ink sm:text-3xl">
+        Khadija is an AI/ML Engineer building practical, production-ready ML systems and AI agents.
+      </p>
+      <div class="flex flex-col justify-between gap-6">
+        <p class="text-base leading-relaxed text-muted">
+          She recently wrapped a Machine Learning internship at FlyRank, and works at the seam between classical ML foundations and the newer world of LLM-powered agents — retrieval, tool-use, and multi-agent coordination.
+        </p>
+        <div class="flex flex-wrap gap-2 font-mono text-xs text-faint">
+          <span class="rounded border border-border px-2.5 py-1">ml_internship: FlyRank</span>
+          <span class="rounded border border-border px-2.5 py-1">focus: agents · rag · deployment</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="border-b border-border">
+  <div class="mx-auto max-w-5xl px-6 py-24 sm:px-8">
+    <p class="font-mono text-xs text-accent2">// skills</p>
+    <h2 class="mt-4 font-display text-3xl font-semibold text-ink sm:text-4xl">What she works with</h2>
+    <div class="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2" id="skills-grid"></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="border-b border-border">
+  <div class="mx-auto max-w-5xl px-6 py-24 sm:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="font-mono text-xs text-accent2">// projects</p>
+        <h2 class="mt-4 font-display text-3xl font-semibold text-ink sm:text-4xl">Things she's shipped</h2>
+      </div>
+      <a href="https://github.com/KHADIJA2008-KB" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2.5 font-mono text-xs text-muted hover:border-accent2/60 hover:text-accent2 transition">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        See GitHub profile
+      </a>
+    </div>
+    <div class="mt-12 flex flex-col gap-5" id="projects-list"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="mx-auto max-w-5xl px-6 py-24 sm:px-8">
+    <p class="font-mono text-xs text-accent2">// contact</p>
+    <h2 class="mt-4 max-w-lg font-display text-3xl font-semibold leading-tight text-ink sm:text-4xl">Building something worth building together?</h2>
+    <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
+      <a href="mailto:khadijabilal888@gmail.com" class="inline-flex items-center gap-2 rounded-md bg-accent px-5 py-3 text-sm font-medium text-white hover:bg-accent/90 transition">khadijabilal888@gmail.com</a>
+      <a href="https://github.com/KHADIJA2008-KB" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-md border border-border px-5 py-3 text-sm font-medium text-ink hover:border-accent2/60 hover:text-accent2 transition">github.com/KHADIJA2008-KB</a>
+    </div>
+    <p class="mt-10 font-mono text-xs text-faint">or keep it easy — ask her agent in the corner.</p>
+  </div>
+  <footer class="border-t border-border">
+    <div class="mx-auto max-w-5xl px-6 py-8 sm:px-8">
+      <p class="font-mono text-xs text-faint">© 2026 Khadija Bilal. Built with Next.js &amp; Tailwind CSS.</p>
+    </div>
+  </footer>
+</section>
+
+<!-- AGENT WIDGET -->
+<div class="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3 sm:bottom-8 sm:right-8">
+  <div id="agent-panel" class="hidden h-[26rem] w-[min(92vw,22rem)] flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-2xl shadow-black/40">
+    <div class="flex items-center justify-between border-b border-border bg-surface2 px-4 py-3">
+      <div class="flex items-center gap-2 font-mono text-xs text-muted">
+        <span class="relative flex h-1.5 w-1.5">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent2 opacity-60"></span>
+          <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent2"></span>
+        </span>
+        khadija_agent — online
+      </div>
+      <button onclick="toggleAgent()" class="rounded p-1 text-faint hover:text-ink transition">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3L13 13M13 3L3 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div id="agent-messages" class="console-scroll flex-1 space-y-4 overflow-y-auto px-4 py-4"></div>
+    <div class="border-t border-border p-3">
+      <div class="flex items-end gap-2 rounded-lg border border-border bg-bg px-3 py-2 focus-within:border-accent2/60">
+        <span class="pb-1 font-mono text-xs text-faint">›</span>
+        <textarea id="agent-input" rows="1" placeholder="Ask about her skills or projects…" class="max-h-24 flex-1 resize-none bg-transparent text-sm text-ink placeholder:text-faint focus:outline-none"></textarea>
+        <button onclick="sendMsg()" class="rounded-md bg-accent px-2.5 py-1.5 text-white transition">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 2l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <button onclick="toggleAgent()" id="agent-toggle" class="flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-3 font-mono text-xs text-ink shadow-lg shadow-black/30 hover:border-accent2/60 hover:text-accent2 transition">
+    <span class="relative flex h-1.5 w-1.5">
+      <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent2 opacity-60"></span>
+      <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent2"></span>
+    </span>
+    <span id="agent-toggle-label">ask_khadijas_agent()</span>
+  </button>
+</div>
+
+<script>
+// ---- content data ----
+const skillGroups = [
+  { name: "Machine Learning & Data", items: [
+    "Python (NumPy, Pandas, scikit-learn)",
+    "Model development: regression, classification, clustering, evaluation & tuning",
+    "Data preprocessing, feature engineering, EDA",
+  ]},
+  { name: "Deep Learning / AI Stack", items: [
+    "PyTorch / TensorFlow fundamentals",
+    "LLM APIs (Claude, OpenAI) — prompting, function calling, structured outputs",
+    "RAG (retrieval-augmented generation) & vector embeddings",
+    "Agentic workflows / tool-use design",
+  ]},
+  { name: "Engineering & Deployment", items: [
+    "REST APIs (FastAPI / Flask)",
+    "Git & GitHub workflows",
+    "Cloud deployment (Vercel; basic AWS/GCP familiarity)",
+    "SQL / data querying",
+  ]},
+  { name: "Other", items: [
+    "Prompt engineering & AI tool fluency (Claude Code, Cursor, v0)",
+    "Technical writing / documentation",
+  ]},
+];
+
+const skillsGrid = document.getElementById("skills-grid");
+skillGroups.forEach(g => {
+  const el = document.createElement("div");
+  el.className = "bg-bg p-7 sm:p-8";
+  el.innerHTML = `
+    <h3 class="font-display text-base font-semibold text-ink">${g.name}</h3>
+    <ul class="mt-4 space-y-2.5">
+      ${g.items.map(i => `<li class="flex gap-2.5 text-sm leading-relaxed text-muted"><span class="mt-1 font-mono text-xs text-accent">&gt;</span><span>${i}</span></li>`).join("")}
+    </ul>`;
+  skillsGrid.appendChild(el);
+});
+
+const projects = [
+  { tag:"autonomous-agent", title:"Autonomous Research Scout Agent", stack:["Python","ArXiv API","Gemini API","Notion API"],
+    desc:"An autonomous AI agent pipeline that monitors daily ArXiv preprints, extracts benchmark lifts & technical takeaways via an LLM, and logs structured research cards into Notion.",
+    liveUrl:"https://your-agent-demo.netlify.app" },
+  { tag:"agents", title:"Multi-Agent Research Crew", stack:["CrewAI","Python","LLM orchestration"],
+    desc:"A collaborative multi-agent AI system built with CrewAI, where specialized agents — researcher, analyst, writer — coordinate to complete complex tasks end-to-end, producing a synthesized report from a single prompt." },
+  { tag:"rag", title:"Document RAG Chatbot", stack:["Google Drive API","Gemini embeddings","Pinecone"],
+    desc:"An automated retrieval-augmented generation pipeline that ingests documents from Google Drive, embeds them with Google Gemini, and stores them in Pinecone — powering a chatbot that answers questions grounded in real uploaded content." },
+  { tag:"security", title:"SQL Agent Security Workshop", stack:["LangChain","SQL","Query validation"],
+    desc:"A LangChain-based SQL agent evolved through progressive security hardening — from an unrestricted prototype to a production-style analytics agent with query validation, SELECT-only enforcement, and safe error handling." },
+  { tag:"design", title:"SketchLine", stack:["Interactive canvas","Feedback engine","Practice-first UX"],
+    desc:"A practice-first design & sketching app. Every lesson ends on a live whiteboard — read the technique, then place the shapes, colors, or linework yourself, and get feedback in seconds." },
+  { tag:"healthtech", title:"Queueless", stack:["QR-based queue access","Live tracking","Wait-time prediction"],
+    desc:"An AI-powered queue management system for hospitals, clinics, and public service centers in Pakistan. Cuts physical waiting time through QR-based queue access, live tracking, and smart wait-time prediction." },
+];
+
+const projectsList = document.getElementById("projects-list");
+projects.forEach(p => {
+  const el = document.createElement("article");
+  el.className = "group relative rounded-lg border border-border bg-surface/40 p-7 sm:p-9 hover:border-accent/50 transition";
+  const actionButton = p.liveUrl ? `
+    <a href="${p.liveUrl}" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 rounded-md bg-accent/20 border border-accent/40 px-4 py-2 text-xs font-mono font-medium text-accent2 hover:bg-accent/40 transition">
+      <span>&gt; test_agent_demo()</span>
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </a>` : '';
+  el.innerHTML = `
+    <span class="font-mono text-xs uppercase tracking-wider text-accent">[${p.tag}]</span>
+    <h3 class="mt-2 font-display text-xl font-semibold text-ink sm:text-2xl">${p.title}</h3>
+    <p class="mt-3 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">${p.desc}</p>
+    ${actionButton}
+    <div class="mt-6 flex flex-wrap gap-2">
+      ${p.stack.map(s => `<span class="rounded border border-border px-2.5 py-1 font-mono text-xs text-faint">${s}</span>`).join("")}
+    </div>`;
+  projectsList.appendChild(el);
+});
+
+// ---- node field background ----
+const canvas = document.getElementById("nodefield");
+const ctx = canvas.getContext("2d");
+let W, H, dpr = Math.min(window.devicePixelRatio || 1, 2);
+let nodes = [];
+const N = 46, LINK = 130;
+const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function resize() {
+  const r = canvas.parentElement.getBoundingClientRect();
+  W = r.width; H = r.height;
+  canvas.width = W * dpr; canvas.height = H * dpr;
+  canvas.style.width = W + "px"; canvas.style.height = H + "px";
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+}
+function seed() {
+  nodes = Array.from({length:N}, () => ({
+    x: Math.random()*W, y: Math.random()*H,
+    vx: (Math.random()-0.5)*0.18, vy:(Math.random()-0.5)*0.18,
+    r: Math.random()*1.4+0.6
+  }));
+}
+function frame() {
+  ctx.clearRect(0,0,W,H);
+  for (const n of nodes) {
+    n.x += n.vx; n.y += n.vy;
+    if (n.x<0||n.x>W) n.vx*=-1;
+    if (n.y<0||n.y>H) n.vy*=-1;
+  }
+  for (let i=0;i<nodes.length;i++) for (let j=i+1;j<nodes.length;j++) {
+    const a=nodes[i], b=nodes[j];
+    const dx=a.x-b.x, dy=a.y-b.y, d=Math.sqrt(dx*dx+dy*dy);
+    if (d<LINK) {
+      ctx.strokeStyle = `rgba(110,86,207,${(1-d/LINK)*0.22})`;
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+    }
+  }
+  for (const n of nodes) {
+    ctx.beginPath(); ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+    ctx.fillStyle = "rgba(63,217,195,0.55)"; ctx.fill();
+  }
+}
+resize(); seed();
+if (reduced) { frame(); } else { (function loop(){ frame(); requestAnimationFrame(loop); })(); }
+window.addEventListener("resize", () => { resize(); seed(); if (reduced) frame(); });
+
+// ---- mocked agent (preview only — real one calls Claude via /api/chat) ----
+const panel = document.getElementById("agent-panel");
+const toggleBtn = document.getElementById("agent-toggle");
+const label = document.getElementById("agent-toggle-label");
+const messagesEl = document.getElementById("agent-messages");
+const input = document.getElementById("agent-input");
+let open = false;
+
+function toggleAgent() {
+  open = !open;
+  panel.classList.toggle("hidden", !open);
+  panel.classList.toggle("flex", open);
+  label.textContent = open ? "close_agent()" : "ask_khadijas_agent()";
+  if (open) input.focus();
+}
+
+function addMsg(role, text) {
+  const div = document.createElement("div");
+  div.className = "text-sm leading-relaxed";
+  div.innerHTML = `<span class="font-mono text-[11px] ${role==='user'?'text-accent2':'text-accent'}">${role==='user'?'you &gt;':'agent &gt;'}</span><p class="mt-1 text-ink/90">${text}</p>`;
+  messagesEl.appendChild(div);
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+}
+
+addMsg("assistant", "Hi, I'm Khadija's agent (preview mode — canned answers here; the live version in the .zip calls Claude for real). Ask me about her background, skills, or projects.");
+
+function mockReply(q) {
+  const s = q.toLowerCase();
+  if (s.includes("scout") || s.includes("arxiv") || s.includes("research agent")) return "Her Autonomous Research Scout monitors ArXiv daily, extracts key metrics with an LLM, and logs structured summaries to Notion. You can test it using the button in the Hero or Projects section!";
+  if (s.includes("flyrank") || s.includes("intern")) return "Khadija completed a Machine Learning internship at FlyRank, working on applied ML within a real product environment.";
+  if (s.includes("rag") || s.includes("pinecone") || s.includes("gemini")) return "Her Document RAG Chatbot ingests files from Google Drive, embeds them with Google Gemini, stores vectors in Pinecone, and answers questions grounded in that content.";
+  if (s.includes("crew") || (s.includes("agent") && s.includes("multi"))) return "The Multi-Agent Research Crew, built with CrewAI, has a researcher, analyst, and writer agent coordinate end-to-end to turn one prompt into a synthesized report.";
+  if (s.includes("sql") || s.includes("security")) return "Her SQL Agent Security Workshop hardened a LangChain SQL agent from an open prototype into a production-style agent with query validation and SELECT-only enforcement.";
+  if (s.includes("sketch") || s.includes("whiteboard")) return "SketchLine is a practice-first design & sketching app — every lesson ends on a live whiteboard where you place the shapes, colors, or linework yourself and get feedback in seconds.";
+  if (s.includes("queue") || s.includes("hospital") || s.includes("clinic")) return "Queueless is an AI-powered queue management system for hospitals, clinics, and public service centers in Pakistan — QR-based queue access, live tracking, and smart wait-time prediction.";
+  if (s.includes("strong") || s.includes("best")) return "She's strongest where classical ML meets the LLM agent stack — RAG pipelines, tool-use design, and shipping that work behind real APIs.";
+  return "In the live version I'd answer that using Claude and Khadija's full background. For now, try asking about the Research Scout agent, FlyRank, the RAG chatbot, SketchLine, or Queueless.";
+}
+
+function sendMsg() {
+  const text = input.value.trim();
+  if (!text) return;
+  addMsg("user", text);
+  input.value = "";
+  setTimeout(() => addMsg("assistant", mockReply(text)), 500);
+}
+input.addEventListener("keydown", e => {
+  if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendMsg(); }
+});
+</script>
+</body>
+</html>
