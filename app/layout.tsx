@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -42,7 +43,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
-      <body className="bg-bg text-ink font-body antialiased">{children}</body>
+      <body className="bg-bg text-ink font-body antialiased">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
