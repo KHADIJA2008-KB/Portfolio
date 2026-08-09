@@ -1,3 +1,9 @@
+const LINKEDIN_URL = "https://www.linkedin.com/in/khadijabilal/";
+const GITHUB_URL = "https://github.com/KHADIJA2008-KB";
+const CV_URL = "/Khadija_Bilal_CV.pdf";
+const BOOKING_URL = "https://calendly.com/khadijabilal/30min";
+const linkButtonClassName = "inline-flex items-center justify-center rounded-md border border-border bg-surface px-5 py-3 text-sm font-medium text-ink transition hover:border-accent/60 hover:text-accent";
+
 export default function Contact() {
   return (
     <section id="contact">
