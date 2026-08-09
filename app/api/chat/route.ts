@@ -4,10 +4,9 @@ import { RESUME_CONTEXT } from "@/lib/resume";
 // This route runs server-side only, so the API key never reaches the browser.
 export const runtime = "nodejs";
 
-const SYSTEM_PROMPT = `You are "Khadija's Agent" — a small AI assistant embedded on Khadija Bilal's
-personal portfolio site. Visitors chat with you to learn about her background, skills,
-and projects. Ground every answer strictly in the context below. Do not invent
-employers, dates, degrees, or metrics that aren't in it.
+const SYSTEM_PROMPT = `You are "Khadija's Agent" — a helpful, friendly guide embedded on Khadija Bilal's personal portfolio site. Visitors ask you about her background, skills, and projects, and you answer like a knowledgeable friend who knows her work well.
+
+Ground every answer strictly in the context below. Never invent employers, dates, degrees, or metrics that aren't in it. Keep responses concise, warm, and conversational rather than robotic.
 
 ${RESUME_CONTEXT}`;
 
@@ -22,40 +21,40 @@ function fallbackReply(question: string): string {
   const q = question.toLowerCase();
 
   if (q.includes("scout") || q.includes("arxiv") || q.includes("research agent")) {
-    return "Her Autonomous Research Scout Agent monitors ArXiv preprints daily, extracts benchmark lifts and key takeaways with an LLM, and logs structured research cards into Notion. There's a live demo button in the Hero and Projects sections.";
+    return "Khadija's Autonomous Research Scout Agent checks ArXiv daily, pulls out useful benchmark lifts and takeaways with an LLM, and saves structured notes into Notion. There’s a live demo link in the Hero and Projects sections.";
   }
   if (q.includes("flyrank") || q.includes("intern")) {
-    return "Khadija completed a Machine Learning internship at FlyRank, working on applied ML within a real product environment — the kind of end-to-end thinking (data → model → deployment) that shows up across her project work.";
+    return "Khadija completed a 12-week Machine Learning internship at FlyRank starting on 6 July. She focused on ML and AI Fluency assignments, including data cleaning, feature engineering, model training, evaluation, prompt design, API integration, reporting, and deployment support.";
   }
   if (q.includes("rag") || q.includes("pinecone") || q.includes("gemini") || q.includes("document")) {
-    return "Her Document RAG Chatbot ingests files from Google Drive, embeds them with Google Gemini, and stores the vectors in Pinecone — so it answers questions grounded in real uploaded content instead of general knowledge.";
+    return "Her Document RAG Chatbot pulls documents from Google Drive, turns them into Gemini embeddings, and stores them in Pinecone so it can answer questions from the actual content.";
   }
   if (q.includes("agent") && (q.includes("crew") || q.includes("multi") || q.includes("research"))) {
-    return "The Multi-Agent Research Crew, built with CrewAI, has specialized agents — researcher, analyst, writer — coordinate to turn a single prompt into a synthesized report, end-to-end.";
+    return "The Multi-Agent Research Crew uses CrewAI so a researcher, analyst, and writer agent can work together to turn one prompt into a polished, structured report.";
   }
   if (q.includes("sql") || q.includes("security") || q.includes("langchain")) {
-    return "Her SQL Agent Security Workshop hardened a LangChain SQL agent from an unrestricted prototype into a production-style agent, adding query validation, SELECT-only enforcement, and safe error handling.";
+    return "Her SQL Agent Security Workshop focused on hardening a LangChain SQL agent with query checks, SELECT-only enforcement, and safer error handling.";
   }
   if (q.includes("sketch") || q.includes("whiteboard") || q.includes("drawing") || q.includes("design app")) {
-    return "SketchLine is a practice-first design & sketching app — every lesson ends on a live whiteboard where you place the shapes, colors, or linework yourself and get feedback in seconds, rather than just reading theory.";
+    return "SketchLine is a hands-on sketching app where every lesson ends on a live whiteboard, so you actually draw the shapes, colors, or linework and get instant feedback.";
   }
   if (q.includes("queueless") || q.includes("queue") || q.includes("hospital") || q.includes("clinic") || q.includes("waiting")) {
-    return "Queueless is an AI-powered queue management system for hospitals, clinics, and public service centers in Pakistan — it cuts physical waiting time with QR-based queue access, live tracking, and smart wait-time prediction.";
+    return "Queueless is an AI queue system for hospitals and clinics in Pakistan — it uses QR check-in, live tracking, and wait-time prediction to reduce physical waiting.";
   }
   if (q.includes("skill") || q.includes("stack") || q.includes("tech") || q.includes("tools")) {
-    return "Khadija's core stack spans classical ML (Python, scikit-learn, model development & tuning), the deep learning / LLM side (PyTorch/TensorFlow, Claude & OpenAI APIs, RAG, agentic workflows), and engineering (FastAPI/Flask, Git, SQL, Vercel deployment).";
+    return "Khadija’s stack bridges classical ML and the LLM world: Python and scikit-learn, plus PyTorch/TensorFlow, Claude/OpenAI APIs, RAG, agent workflows, FastAPI/Flask, Git, SQL, and Vercel deployment.";
   }
   if (q.includes("strong") || q.includes("best") || q.includes("specialt") || q.includes("focus")) {
-    return "She's strongest where classical ML meets the LLM agent stack — RAG pipelines, tool-use design, and getting that work behind a real, deployed API rather than leaving it in a notebook.";
+    return "She’s most comfortable where classical ML meets the agent stack — building RAG pipelines, designing tool-driven workflows, and making that work deployable.";
   }
   if (q.includes("contact") || q.includes("email") || q.includes("reach") || q.includes("hire")) {
-    return "You can reach Khadija directly at khadijabilal888@gmail.com, or see her code at github.com/KHADIJA2008-KB.";
+    return "You can reach Khadija at khadijabilal888@gmail.com, or check out her work on github.com/KHADIJA2008-KB.";
   }
   if (q.includes("project")) {
-    return "She's built six projects worth a look: an Autonomous Research Scout Agent (ArXiv + Notion), a Multi-Agent Research Crew (CrewAI), a Document RAG Chatbot (Gemini + Pinecone), a SQL Agent Security Workshop (LangChain), SketchLine (a practice-first sketching app), and Queueless (an AI queue management system for hospitals and clinics) — ask about any one by name for more detail.";
+    return "Her portfolio includes six projects: an Autonomous Research Scout Agent (ArXiv + Notion), a Multi-Agent Research Crew (CrewAI), a Document RAG Chatbot (Gemini + Pinecone), a SQL Agent Security Workshop (LangChain), SketchLine (a hands-on sketching app), and Queueless (an AI queue system for hospitals and clinics). Ask about any one by name for more detail.";
   }
 
-  return "I don't have specifics on that, but I can tell you about Khadija's FlyRank internship, her RAG chatbot, the multi-agent research crew, or the SQL agent security project — or reach her directly at khadijabilal888@gmail.com.";
+  return "That detail isn’t in my notes, but I can still share what I know about Khadija’s FlyRank internship, her RAG chatbot, the multi-agent crew, or her SQL security work. You can also reach her at khadijabilal888@gmail.com.";
 }
 
 export async function POST(req: NextRequest) {

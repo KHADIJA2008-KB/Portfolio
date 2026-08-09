@@ -6,14 +6,14 @@ type Message = { role: "user" | "assistant"; content: string };
 
 const STARTER_PROMPTS = [
   "What did she do at FlyRank?",
-  "Walk me through the RAG chatbot",
-  "What's she strongest at?",
+  "Tell me about the RAG chatbot",
+  "Where does she shine the most?",
 ];
 
 const WELCOME: Message = {
   role: "assistant",
   content:
-    "Hi, I'm Khadija's agent. Ask me about her background, skills, or projects — the RAG chatbot, the multi-agent crew, the SQL security work, any of it.",
+    "Hi — I’m Khadija’s agent. Ask me about her background, skills, or projects, and I’ll share what I know from her portfolio and experience.",
 };
 
 export default function AgentWidget() {
@@ -82,14 +82,14 @@ export default function AgentWidget() {
         <div
           role="dialog"
           aria-label="Chat with Khadija's agent"
-          className="flex h-[26rem] w-[min(92vw,22rem)] flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-2xl shadow-black/40"
+          className="flex h-[26rem] w-[min(92vw,22rem)] flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-2xl shadow-black/10"
         >
           {/* console header */}
           <div className="flex items-center justify-between border-b border-border bg-surface2 px-4 py-3">
             <div className="flex items-center gap-2 font-mono text-xs text-muted">
               <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent2 opacity-60" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent2" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
               </span>
               khadija_agent — online
             </div>
@@ -118,7 +118,7 @@ export default function AgentWidget() {
               <div key={i} className="text-sm leading-relaxed">
                 <span
                   className={`font-mono text-[11px] ${
-                    m.role === "user" ? "text-accent2" : "text-accent"
+                    m.role === "user" ? "text-accent" : "text-accent"
                   }`}
                 >
                   {m.role === "user" ? "you >" : "agent >"}
@@ -138,7 +138,7 @@ export default function AgentWidget() {
             )}
 
             {error && (
-              <p className="rounded border border-accent/30 bg-accent/5 px-3 py-2 font-mono text-xs text-accent2">
+              <p className="rounded border border-accent/30 bg-accent/5 px-3 py-2 font-mono text-xs text-accent">
                 {error}
               </p>
             )}
@@ -149,7 +149,7 @@ export default function AgentWidget() {
                   <button
                     key={p}
                     onClick={() => send(p)}
-                    className="rounded-full border border-border px-3 py-1.5 text-left font-mono text-[11px] text-muted transition hover:border-accent2/60 hover:text-accent2"
+                    className="rounded-full border border-border px-3 py-1.5 text-left font-mono text-[11px] text-muted transition hover:border-accent/60 hover:text-accent"
                   >
                     {p}
                   </button>
@@ -160,7 +160,7 @@ export default function AgentWidget() {
 
           {/* input */}
           <div className="border-t border-border p-3">
-            <div className="flex items-end gap-2 rounded-lg border border-border bg-bg px-3 py-2 focus-within:border-accent2/60">
+            <div className="flex items-end gap-2 rounded-lg border border-border bg-bg px-3 py-2 focus-within:border-accent/60">
               <span className="pb-1 font-mono text-xs text-faint">›</span>
               <textarea
                 ref={inputRef}
@@ -194,11 +194,11 @@ export default function AgentWidget() {
 
       <button
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-3 font-mono text-xs text-ink shadow-lg shadow-black/30 transition hover:border-accent2/60 hover:text-accent2"
+        className="flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-3 font-mono text-xs text-ink shadow-lg shadow-black/10 transition hover:border-accent/60 hover:text-accent"
       >
         <span className="relative flex h-1.5 w-1.5">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent2 opacity-60" />
-          <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent2" />
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+          <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
         </span>
         {open ? "close_agent()" : "ask_khadijas_agent()"}
       </button>

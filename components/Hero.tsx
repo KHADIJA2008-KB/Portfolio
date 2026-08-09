@@ -5,15 +5,15 @@ export default function Hero() {
     <section className="relative overflow-hidden border-b border-border">
       <div className="absolute inset-0">
         <NodeField />
-        <div className="absolute inset-0 bg-gradient-to-b from-bg/10 via-bg/70 to-bg" />
+        <div className="absolute inset-0 bg-gradient-to-b from-bg/40 via-bg/80 to-bg" />
       </div>
 
       <div className="relative mx-auto flex min-h-[86vh] max-w-5xl flex-col justify-center px-6 py-28 sm:px-8">
         <div className="animate-rise" style={{ animationDelay: "0ms" }}>
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1.5 font-mono text-xs text-accent2 backdrop-blur">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-surface/80 px-3 py-1.5 font-mono text-xs text-accent backdrop-blur">
             <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent2 opacity-60" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent2" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
             </span>
             agent_status: online — ml_internship: flyrank, complete
           </div>
@@ -47,7 +47,7 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="rounded-md bg-accent px-5 py-3 text-sm font-medium text-white transition hover:bg-accent/90"
+            className="button-hover rounded-md bg-accent px-5 py-3 text-sm font-medium text-white"
           >
             View projects
           </a>
@@ -55,7 +55,7 @@ export default function Hero() {
             href="https://your-agent-demo.netlify.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-md border border-accent2/60 bg-accent2/10 px-5 py-3 text-sm font-medium text-accent2 transition hover:bg-accent2/20"
+            className="button-hover inline-flex items-center gap-2 rounded-md border border-border bg-surface/90 px-5 py-3 text-sm font-medium text-accent"
           >
             <span>⚡ Test Research Scout Agent</span>
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -70,7 +70,7 @@ export default function Hero() {
           </a>
           <a
             href="#contact"
-            className="rounded-md border border-border px-5 py-3 text-sm font-medium text-ink transition hover:border-accent2/60 hover:text-accent2"
+            className="button-hover rounded-md border border-border bg-surface/80 px-5 py-3 text-sm font-medium text-ink"
           >
             Get in touch
           </a>

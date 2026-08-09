@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
-const display = Space_Grotesk({
+const display = Inter({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
   variable: "--font-display",
   display: "swap",
 });
 
-const body = Inter({
+const body = Source_Serif_4({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-body",

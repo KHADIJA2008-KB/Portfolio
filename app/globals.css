@@ -2,23 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: light;
+}
+
 * {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  background-color: #f0eee6;
+  color: #1a1a1a;
 }
 
 body {
-  background-color: #0B0E11;
-  color: #EDEEF0;
+  background: linear-gradient(180deg, #f0eee6 0%, #f5f0e7 100%);
+  color: #1a1a1a;
   font-feature-settings: "ss01" on, "cv01" on;
 }
 
 ::selection {
-  background: #6E56CF;
-  color: #0B0E11;
+  background: #f3c6a7;
+  color: #1a1a1a;
 }
 
 /* Visible keyboard focus everywhere */
@@ -26,9 +32,38 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #3FD9C3;
+  outline: 2px solid oklch(0.70 0.14 45);
   outline-offset: 3px;
   border-radius: 2px;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-hover {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(26, 26, 26, 0.08);
+}
+
+.button-hover {
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.button-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(26, 26, 26, 0.08);
 }
 
 /* Thin custom scrollbar for the agent console */
@@ -39,7 +74,7 @@ textarea:focus-visible {
   background: transparent;
 }
 .console-scroll::-webkit-scrollbar-thumb {
-  background: #232A32;
+  background: #e3ded1;
   border-radius: 999px;
 }
 

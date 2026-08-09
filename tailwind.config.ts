@@ -8,15 +8,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#0B0E11",
-        surface: "#12161B",
-        surface2: "#181D24",
-        border: "#232A32",
-        ink: "#EDEEF0",
-        muted: "#8B95A1",
-        faint: "#5A6470",
-        accent: "#6E56CF",
-        accent2: "#3FD9C3",
+        bg: "#f0eee6",
+        surface: "#faf9f5",
+        surface2: "#f5efe4",
+        border: "#e3ded1",
+        ink: "#1a1a1a",
+        muted: "#6b6558",
+        faint: "#9c9686",
+        accent: "oklch(0.70 0.14 45)",
+        accent2: "#b96a4f",
+        "accent-dark": "#1a1a1a",
+        clay: "#b96a4f",
+        fig: "#6b4a5c",
+        cactus: "#7a8b6f",
+        sky: "#6f92a8",
+        heather: "#8a7ba8",
+        olive: "#7d7a4f",
       },
       fontFamily: {
         display: ["var(--font-display)"],
@@ -24,7 +31,7 @@ const config: Config = {
         mono: ["var(--font-mono)"],
       },
       backgroundImage: {
-        "grain": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E\")",
+        grain: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E\")",
       },
       keyframes: {
         blink: {

@@ -68,8 +68,8 @@ export default function NodeField() {
           const dy = a.y - b.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < LINK_DIST) {
-            const alpha = (1 - dist / LINK_DIST) * 0.22;
-            ctx!.strokeStyle = `rgba(110, 86, 207, ${alpha})`;
+            const alpha = (1 - dist / LINK_DIST) * 0.24;
+            ctx!.strokeStyle = `rgba(185, 106, 79, ${alpha})`;
             ctx!.lineWidth = 1;
             ctx!.beginPath();
             ctx!.moveTo(a.x, a.y);
@@ -82,7 +82,7 @@ export default function NodeField() {
       for (const n of nodes) {
         ctx!.beginPath();
         ctx!.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-        ctx!.fillStyle = "rgba(63, 217, 195, 0.55)";
+        ctx!.fillStyle = "rgba(107, 74, 92, 0.45)";
         ctx!.fill();
       }
     }

@@ -17,9 +17,16 @@ also includes a writing/capstone placeholder section for future posts and projec
 
 EXPERIENCE:
 - Machine Learning Intern, FlyRank (completed)
-  Worked on applied machine learning within a live product setting, contributing to
-  the kind of end-to-end thinking (data -> model -> deployment) that shows up across
-  her project work.
+  A 12-week internship beginning on 6 July, focused on FlyRank's ML and AI Fluency
+  assignments. Day-to-day work included data cleaning, feature engineering, model
+  training, evaluation, prompt design, API integration, reporting, and deployment
+  support. The internship centered on completing applied assignments and capstones
+  rather than shipping a standalone product.
+
+- Capstone work
+  Built a real predictive model on real data for the research paper capstone.
+  Also worked on a personal AI agent capstone, now represented by the portfolio's
+  own agent experience.
 
 SKILLS:
 
@@ -59,38 +66,44 @@ PROJECTS:
 3. Autonomous Research Scout Agent
    An autonomous AI agent pipeline that monitors daily ArXiv preprints, extracts
    benchmark lifts and technical takeaways using an LLM, and logs structured research
-   cards into Notion. A live demo is available via a button in the Hero and Projects
-   sections of the site.
+   cards into Notion. A live demo is not yet deployed.
 
 4. Multi-Agent Research Crew
    A collaborative multi-agent AI system built with CrewAI. Specialized agents
    (researcher, analyst, writer) coordinate to complete complex tasks end-to-end,
    producing a synthesized report from a single prompt. Demonstrates agent
-   orchestration, role specialization, and task handoff design.
+   orchestration, role specialization, and task handoff design. A live demo is not
+   yet deployed.
 
 3. Document RAG Chatbot
    An automated retrieval-augmented generation pipeline that ingests documents from
    Google Drive, embeds them with Google Gemini embeddings, and stores them in
    Pinecone (vector database). Powers a chatbot that answers questions grounded in
-   real uploaded content, rather than hallucinating from general knowledge.
+   real uploaded content, rather than hallucinating from general knowledge. A live
+   demo is not yet deployed.
 
 4. SQL Agent Security Workshop
    A LangChain-based SQL agent evolved through progressive security hardening — from
    an unrestricted prototype to a production-style analytics agent with query
    validation, SELECT-only enforcement, and safe error handling for business
    intelligence use cases. Focused on the gap between "an agent that works" and
-   "an agent that's safe to point at a real database."
+   "an agent that's safe to point at a real database." A live demo is not yet
+   deployed.
 
 5. SketchLine
    A practice-first design & sketching app. Every lesson ends on a live whiteboard:
    read the technique, then place the shapes, colors, or linework yourself, and get
    feedback in seconds. Built around learning-by-doing rather than passive reading.
+   The app uses a rule-based feedback engine rather than ML, with no accuracy score
+   applicable. The live demo is https://sketchline.netlify.app/.
 
 6. Queueless
    An AI-powered queue management system for hospitals, clinics, and public service
    centers in Pakistan. Reduces physical waiting time through QR-based queue access,
    live tracking, and smart wait-time prediction — a practical, real-world
-   application of ML aimed at a genuine public-service problem.
+   application of ML aimed at a genuine public-service problem. The project uses
+   placeholder or synthetic data rather than real hospital or clinic logs, and the
+   live demo is https://queueless-126888906449.us-west1.run.app.
 
 CONTACT:
 - Email: khadijabilal888@gmail.com

@@ -43,14 +43,14 @@ export default function Skills() {
   return (
     <section id="skills" className="border-b border-border">
       <div className="mx-auto max-w-5xl px-6 py-24 sm:px-8">
-        <p className="font-mono text-xs text-accent2">// skills</p>
-        <h2 className="mt-4 font-display text-3xl font-semibold text-ink sm:text-4xl">
+        <p className="reveal-on-scroll font-mono text-xs text-accent">// skills</p>
+        <h2 className="reveal-on-scroll mt-4 font-display text-3xl font-semibold text-ink sm:text-4xl">
           What she works with
         </h2>
 
         <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2">
           {groups.map((group) => (
-            <div key={group.name} className="bg-bg p-7 sm:p-8">
+            <div key={group.name} className="bg-surface p-7 sm:p-8">
               <h3 className="font-display text-base font-semibold text-ink">
                 {group.name}
               </h3>
