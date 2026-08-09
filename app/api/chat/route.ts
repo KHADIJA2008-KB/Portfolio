@@ -51,10 +51,10 @@ function fallbackReply(question: string): string {
     return "You can reach Khadija at khadijabilal888@gmail.com, or check out her work on github.com/KHADIJA2008-KB.";
   }
   if (q.includes("project")) {
-    return "Her portfolio includes six projects: an Autonomous Research Scout Agent (ArXiv + Notion), a Multi-Agent Research Crew (CrewAI), a Document RAG Chatbot (Gemini + Pinecone), a SQL Agent Security Workshop (LangChain), SketchLine (a hands-on sketching app), and Queueless (an AI queue system for hospitals and clinics). Ask about any one by name for more detail.";
+    return "Her portfolio includes five active projects: Search Intelligence Capstone, General AI Fluency Capstone, Autonomous Research Scout Agent, SketchLine, and Queueless. Ask about any one by name for more detail.";
   }
 
-  return "That detail isn’t in my notes, but I can still share what I know about Khadija’s FlyRank internship, her RAG chatbot, the multi-agent crew, or her SQL security work. You can also reach her at khadijabilal888@gmail.com.";
+  return "That detail isn’t in my notes, but I can still share what I know about Khadija’s FlyRank internship, her RAG chatbot, or her sketching and queue-management projects. You can also reach her at khadijabilal888@gmail.com.";
 }
 
 export async function POST(req: NextRequest) {
@@ -111,11 +111,32 @@ export async function POST(req: NextRequest) {
     }
 
     const data = await response.json();
-    const reply = (data.content ?? [])
-      .filter((block: { type: string }) => block.type === "text")
-      .map((block: { text: string }) => block.text)
-      .join("\n")
-      .trim();
+    const reply = (() => {
+      if (Array.isArray(data?.content)) {
+        return data.content
+          .filter((block: { type: string }) => block.type === "text")
+          .map((block: { text: string }) => block.text)
+          .join("\n");
+      }
+      if (typeof data?.completion === "string") {
+        return data.completion;
+      }
+      if (typeof data?.output_text === "string") {
+        return data.output_text;
+      }
+      if (typeof data?.response?.output_text === "string") {
+        return data.response.output_text;
+      }
+      if (typeof data?.message?.content === "string") {
+        return data.message.content;
+      }
+      if (Array.isArray(data?.message?.content)) {
+        return data.message.content
+          .map((block: { text: string }) => block.text)
+          .join("\n");
+      }
+      return "";
+    })().trim();
 
     return NextResponse.json({
       reply: reply || "I'm not sure how to answer that yet — try asking about Khadija's skills or projects.",
