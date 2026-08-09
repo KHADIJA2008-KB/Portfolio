@@ -32,7 +32,7 @@ export default function Writing() {
 
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <span className="inline-flex rounded-full border border-border bg-bg px-3 py-1 text-xs text-faint">
-                  July–Sept 2025
+                  July 2026
                 </span>
                 <a
                   href="https://mlcapstone01.netlify.app/"
