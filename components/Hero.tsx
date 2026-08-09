@@ -52,23 +52,6 @@ export default function Hero() {
             View projects
           </a>
           <a
-            href="https://your-agent-demo.netlify.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="button-hover inline-flex items-center gap-2 rounded-md border border-border bg-surface/90 px-5 py-3 text-sm font-medium text-accent"
-          >
-            <span>⚡ Test Research Scout Agent</span>
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path
-                d="M4 12L12 4M12 4H6M12 4V10"
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </a>
-          <a
             href="#contact"
             className="button-hover rounded-md border border-border bg-surface/80 px-5 py-3 text-sm font-medium text-ink"
           >
