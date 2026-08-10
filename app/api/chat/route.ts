@@ -1,27 +1,42 @@
-import { NextRequest, NextResponse } from "next/server";
-import { RESUME_CONTEXT } from "@/lib/resume";
+﻿import { NextRequest, NextResponse } from "next/server";
+import {
+  PORTFOLIO_CONTEXT,
+  getRelevantProjectContext,
+} from "@/lib/portfolioContext";
 
 // This route runs server-side only, so the API key never reaches the browser.
 export const runtime = "nodejs";
 
-const SYSTEM_PROMPT = `You are "Khadija's Agent" — a helpful, friendly guide embedded on Khadija Bilal's personal portfolio site. Visitors ask you about her background, skills, and projects, and you answer like a knowledgeable friend who knows her work well.
+const BASE_SYSTEM_PROMPT = `You are "Khadija's Portfolio Assistant" â€” a polished, professional AI assistant embedded on Khadija Bilal's personal portfolio site. Visitors ask you about her background, skills, and projects, and you answer in the first person as the assistant, using concise, professional language.
 
-Ground every answer strictly in the context below. Never invent employers, dates, degrees, or metrics that aren't in it. Keep responses concise, warm, and conversational rather than robotic.
+Ground every answer strictly in the context below. Do not invent employers, dates, degrees, or metrics that are not present in the portfolio context. Prioritize real project metrics and details when asked about specific work. If a question is outside the portfolio context, politely redirect to Khadija's AI/ML experience and suggest contacting her directly at khadijabilal888@gmail.com.
 
-${RESUME_CONTEXT}`;
+${PORTFOLIO_CONTEXT}`;
+
+function buildSystemPrompt(question: string) {
+  const projectContext = getRelevantProjectContext(question);
+  if (!projectContext) {
+    return BASE_SYSTEM_PROMPT;
+  }
+
+  return `${BASE_SYSTEM_PROMPT}
+
+RELEVANT PROJECT CONTEXT:
+${projectContext}`;
+}
 
 type ChatMessage = { role: "user" | "assistant"; content: string };
 
 // Zero-cost fallback: simple keyword matching over the same resume context.
-// Used whenever the real Claude call can't complete — no ANTHROPIC_API_KEY set,
-// no API credits yet, rate limited, etc. — so the widget still works while
+// Used whenever the real Claude call can't complete â€” no ANTHROPIC_API_KEY set,
+// no API credits yet, rate limited, etc. â€” so the widget still works while
 // Khadija's Anthropic billing isn't set up, and automatically stops being used
 // the moment a real API call succeeds.
 function fallbackReply(question: string): string {
   const q = question.toLowerCase();
 
   if (q.includes("scout") || q.includes("arxiv") || q.includes("research agent")) {
-    return "Khadija's Autonomous Research Scout Agent checks ArXiv daily, pulls out useful benchmark lifts and takeaways with an LLM, and saves structured notes into Notion. There’s a live demo link in the Hero and Projects sections.";
+    return "Khadija's Autonomous Research Scout Agent checks ArXiv daily, pulls out useful benchmark lifts and takeaways with an LLM, and saves structured notes into Notion. Thereâ€™s a live demo link in the Hero and Projects sections.";
   }
   if (q.includes("flyrank") || q.includes("intern")) {
     return "Khadija completed a 12-week Machine Learning internship at FlyRank starting on 6 July. She focused on ML and AI Fluency assignments, including data cleaning, feature engineering, model training, evaluation, prompt design, API integration, reporting, and deployment support.";
@@ -39,13 +54,13 @@ function fallbackReply(question: string): string {
     return "SketchLine is a hands-on sketching app where every lesson ends on a live whiteboard, so you actually draw the shapes, colors, or linework and get instant feedback.";
   }
   if (q.includes("queueless") || q.includes("queue") || q.includes("hospital") || q.includes("clinic") || q.includes("waiting")) {
-    return "Queueless is an AI queue system for hospitals and clinics in Pakistan — it uses QR check-in, live tracking, and wait-time prediction to reduce physical waiting.";
+    return "Queueless is an AI queue system for hospitals and clinics in Pakistan â€” it uses QR check-in, live tracking, and wait-time prediction to reduce physical waiting.";
   }
   if (q.includes("skill") || q.includes("stack") || q.includes("tech") || q.includes("tools")) {
-    return "Khadija’s stack bridges classical ML and the LLM world: Python and scikit-learn, plus PyTorch/TensorFlow, Claude/OpenAI APIs, RAG, agent workflows, FastAPI/Flask, Git, SQL, and Vercel deployment.";
+    return "Khadijaâ€™s stack bridges classical ML and the LLM world: Python and scikit-learn, plus PyTorch/TensorFlow, Claude/OpenAI APIs, RAG, agent workflows, FastAPI/Flask, Git, SQL, and Vercel deployment.";
   }
   if (q.includes("strong") || q.includes("best") || q.includes("specialt") || q.includes("focus")) {
-    return "She’s most comfortable where classical ML meets the agent stack — building RAG pipelines, designing tool-driven workflows, and making that work deployable.";
+    return "Sheâ€™s most comfortable where classical ML meets the agent stack â€” building RAG pipelines, designing tool-driven workflows, and making that work deployable.";
   }
   if (q.includes("contact") || q.includes("email") || q.includes("reach") || q.includes("hire")) {
     return "You can reach Khadija at khadijabilal888@gmail.com, or check out her work on github.com/KHADIJA2008-KB.";
@@ -54,7 +69,7 @@ function fallbackReply(question: string): string {
     return "Her portfolio includes five active projects: Search Intelligence Capstone, General AI Fluency Capstone, Autonomous Research Scout Agent, SketchLine, and Queueless. Ask about any one by name for more detail.";
   }
 
-  return "That detail isn’t in my notes, but I can still share what I know about Khadija’s FlyRank internship, her RAG chatbot, or her sketching and queue-management projects. You can also reach her at khadijabilal888@gmail.com.";
+  return "That detail isnâ€™t in my notes, but I can still share what I know about Khadijaâ€™s FlyRank internship, her RAG chatbot, or her sketching and queue-management projects. You can also reach her at khadijabilal888@gmail.com.";
 }
 
 export async function POST(req: NextRequest) {
@@ -75,7 +90,7 @@ export async function POST(req: NextRequest) {
   const lastUserMessage = [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
   const apiKey = process.env.ANTHROPIC_API_KEY;
 
-  // No key configured at all — go straight to the free fallback, no network call.
+  // No key configured at all â€” go straight to the free fallback, no network call.
   if (!apiKey) {
     return NextResponse.json({ reply: fallbackReply(lastUserMessage), mode: "fallback" });
   }
@@ -97,14 +112,14 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify({
         model: "claude-sonnet-4-6",
         max_tokens: 500,
-        system: SYSTEM_PROMPT,
+        system: buildSystemPrompt(lastUserMessage),
         messages: trimmed,
       }),
     });
 
     if (!response.ok) {
       const errText = await response.text();
-      // Covers billing/credit issues, rate limits, bad key, etc. — all fall back
+      // Covers billing/credit issues, rate limits, bad key, etc. â€” all fall back
       // gracefully instead of surfacing an error to the visitor.
       console.error("Anthropic API error, using fallback:", errText);
       return NextResponse.json({ reply: fallbackReply(lastUserMessage), mode: "fallback" });
@@ -139,7 +154,7 @@ export async function POST(req: NextRequest) {
     })().trim();
 
     return NextResponse.json({
-      reply: reply || "I'm not sure how to answer that yet — try asking about Khadija's skills or projects.",
+      reply: reply || "I'm not sure how to answer that yet â€” try asking about Khadija's skills or projects.",
       mode: "live",
     });
   } catch (err) {
@@ -147,3 +162,4 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ reply: fallbackReply(lastUserMessage), mode: "fallback" });
   }
 }
+

@@ -1,0 +1,105 @@
+﻿{
+  "personalInfo": {
+    "name": "Khadija Bilal",
+    "role": "AI/ML Engineer",
+    "location": "Karachi, Pakistan",
+    "targetPositions": [
+      "Machine Learning Engineer",
+      "AI Engineer",
+      "Data Scientist",
+      "AI Product Engineer"
+    ]
+  },
+  "skills": {
+    "languages": ["Python", "JavaScript", "TypeScript", "SQL"],
+    "frameworks": ["PyTorch", "TensorFlow", "scikit-learn", "Next.js", "Tailwind CSS"],
+    "tools": ["Git", "GitHub", "Vercel", "Docker", "FastAPI", "Flask", "Pinecone", "Notion"],
+    "aiMlDomains": ["Retrieval-Augmented Generation (RAG)", "LLM prompt engineering", "agent workflows", "search intelligence", "predictive modeling", "data preprocessing"]
+  },
+  "projects": [
+    {
+      "name": "Kisaan Bazaar",
+      "tagline": "AI-powered marketplace workflow for agriculture commerce.",
+      "description": "Kisaan Bazaar demonstrates an intelligent agricultural marketplace with vendor onboarding, dynamic discovery, and commerce workflow automation for buyers and sellers.",
+      "technologies": ["Next.js", "React", "Tailwind CSS", "Firebase", "Python", "REST APIs"],
+      "keyFeatures": [
+        "AI-assisted product discovery and search",
+        "Vendor dashboard for listing management",
+        "Dynamic category filtering and product recommendations",
+        "Responsive user experience for mobile and desktop"
+      ],
+      "metricsOrResults": [
+        "Placeholder: supported 1,000+ SKU listings",
+        "Placeholder: improved vendor onboarding efficiency by X%",
+        "Placeholder: targeted 5,000 monthly active users"
+      ],
+      "links": {
+        "github": "https://github.com/KHADIJA2008-KB/Kisaan-Bazaar",
+        "demo": "https://kisaan-bazaar.example.com"
+      }
+    },
+    {
+      "name": "Queueless",
+      "tagline": "AI queue management for hospitals and clinics.",
+      "description": "Queueless is a queue management system designed for healthcare and public service centers in Pakistan, reducing physical wait time with digital check-in and live queue tracking.",
+      "technologies": ["Next.js", "React", "Tailwind CSS", "Firebase", "Python", "Machine Learning"],
+      "keyFeatures": [
+        "QR-based patient check-in",
+        "Live queue status and wait-time prediction",
+        "Administrative dashboard for queue operations",
+        "Mobile-friendly interface for clinics and patients"
+      ],
+      "metricsOrResults": [
+        "Placeholder: reduced average waiting time by X%",
+        "Placeholder: supported Y clinic workflows in pilot testing",
+        "Placeholder: delivered Z% faster patient throughput"
+      ],
+      "links": {
+        "github": "https://github.com/KHADIJA2008-KB/Queueless",
+        "demo": "https://queueless.example.com"
+      }
+    },
+    {
+      "name": "FlyRank ML Capstone",
+      "tagline": "Search intelligence model built on 79M search logs.",
+      "description": "This capstone project uses FlyRank search data to build a repeatable search intelligence workflow, uncovering ranking opportunities and generating data-backed recommendations for search quality improvement.",
+      "technologies": ["Python", "scikit-learn", "Pandas", "NumPy", "SQL", "visualization"],
+      "keyFeatures": [
+        "Search log ingestion and cleaning from 79M records",
+        "Feature engineering for relevance and engagement metrics",
+        "Predictive modeling for search opportunity scoring",
+        "Deployed a research-style deliverable with ranked recommendations"
+      ],
+      "metricsOrResults": [
+        "79M search log rows processed",
+        "Placeholder: improved recommendation precision by X%",
+        "Placeholder: surfaced Y high-impact search opportunities"
+      ],
+      "links": {
+        "github": "https://github.com/KHADIJA2008-KB/FlyRank-ML-Capstone",
+        "demo": "https://mlcapstone01.netlify.app"
+      }
+    },
+    {
+      "name": "Agentic Automation Workflows",
+      "tagline": "Practical multi-agent automation for research and analysis.",
+      "description": "Agentic Automation Workflows showcases coordinated agent systems that automate research, analysis, and reporting tasks through role-based AI orchestration.",
+      "technologies": ["Python", "LLM APIs", "Claude", "LangChain", "CrewAI", "Notion"],
+      "keyFeatures": [
+        "Multi-agent collaboration with researcher, analyst, and writer roles",
+        "Automated extraction of technical insights from research sources",
+        "Structured report generation from a single prompt",
+        "Tool-use design for safe, repeatable workflows"
+      ],
+      "metricsOrResults": [
+        "Placeholder: reduced synthesis time by X%",
+        "Placeholder: supported Y research briefings per week",
+        "Placeholder: improved analyst throughput by Z%"
+      ],
+      "links": {
+        "github": "https://github.com/KHADIJA2008-KB/Agentic-Automation-Workflows",
+        "demo": "https://agentic-workflows.example.com"
+      }
+    }
+  ]
+}
