@@ -7,7 +7,7 @@ import {
 // This route runs server-side only, so the API key never reaches the browser.
 export const runtime = "nodejs";
 
-const BASE_SYSTEM_PROMPT = `You are "Khadija's Portfolio Assistant" â€” a polished, professional AI assistant embedded on Khadija Bilal's personal portfolio site. Visitors ask you about her background, skills, and projects, and you answer in the first person as the assistant, using concise, professional language.
+const BASE_SYSTEM_PROMPT = `You are "Khadija's Portfolio Assistant", a polished, professional AI assistant embedded on Khadija Bilal's personal portfolio site. Visitors ask you about her background, skills, and projects, and you answer in the first person as the assistant, using concise, professional language.
 
 Ground every answer strictly in the context below. Do not invent employers, dates, degrees, or metrics that are not present in the portfolio context. Prioritize real project metrics and details when asked about specific work. If a question is outside the portfolio context, politely redirect to Khadija's AI/ML experience and suggest contacting her directly at khadijabilal888@gmail.com.
 
@@ -69,7 +69,7 @@ function fallbackReply(question: string): string {
     return "Her portfolio includes five active projects: Search Intelligence Capstone, General AI Fluency Capstone, Autonomous Research Scout Agent, SketchLine, and Queueless. Ask about any one by name for more detail.";
   }
 
-  return "That detail isnâ€™t in my notes, but I can still share what I know about Khadijaâ€™s FlyRank internship, her RAG chatbot, or her sketching and queue-management projects. You can also reach her at khadijabilal888@gmail.com.";
+  return "That detail isn't in my notes, but I can still share what I know about Khadija's FlyRank internship, her RAG chatbot, or her sketching and queue-management projects. You can also reach her at khadijabilal888@gmail.com.";
 }
 
 export async function POST(req: NextRequest) {
