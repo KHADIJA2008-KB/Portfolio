@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
+import TimeInvested from "@/components/TimeInvested";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Writing from "@/components/Writing";
@@ -63,6 +64,7 @@ export default function Home() {
         <Hero />
         <About />
         <Experience />
+        <TimeInvested />
         <Skills />
         <Projects />
         <Writing />

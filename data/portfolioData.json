@@ -16,6 +16,52 @@
     "tools": ["Git", "GitHub", "Vercel", "Docker", "FastAPI", "Flask", "Pinecone", "Notion"],
     "aiMlDomains": ["Retrieval-Augmented Generation (RAG)", "LLM prompt engineering", "agent workflows", "search intelligence", "predictive modeling", "data preprocessing"]
   },
+  "timeInvested": {
+    "headline": "Engineering time invested",
+    "subtitle": "Verified track record of deliberate practice, hands-on system building, and technical immersion.",
+    "stats": [
+      {
+        "value": "71.3+",
+        "label": "Verified Internship Hours",
+        "detail": "FlyRank AI/ML Program",
+        "color": "text-accent"
+      },
+      {
+        "value": "55 hrs",
+        "label": "Hands-On Practical Builds",
+        "detail": "12 Shipped Assignments",
+        "color": "text-emerald-400"
+      },
+      {
+        "value": "16.3 hrs",
+        "label": "Workshops & Papers",
+        "detail": "14 Technical Sessions",
+        "color": "text-violet-400"
+      }
+    ],
+    "allocations": [
+      {
+        "title": "Agentic Systems & AI Architecture",
+        "value": "23+ hrs",
+        "description": "Engineered end-to-end autonomous research agents (ResearchScout) with ReAct loops, schema validation (Pydantic), and search API integrations."
+      },
+      {
+        "title": "Machine Learning & Automation",
+        "value": "18+ hrs",
+        "description": "Developed queue management engines (Queueless), capstone modeling pipelines, and n8n workflow automations."
+      },
+      {
+        "title": "System Auditing & Deployment",
+        "value": "14+ hrs",
+        "description": "Executed research claim audits, context engineering, and live deployments on Vercel and Netlify over HTTPS."
+      },
+      {
+        "title": "Technical Workshops & Mentorship",
+        "value": "16.3 hrs",
+        "description": "Participated in live paper teardowns, document extraction workshops, and AI engineering guest sessions."
+      }
+    ]
+  },
   "projects": [
     {
       "name": "Kisaan Bazaar",
